@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-follower',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./follower.component.css']
 })
 export class FollowerComponent implements OnInit {
+  
+   data : string;
 
-  constructor() { }
+  constructor(private _Activatedroute:ActivatedRoute,
+    private _router:Router,
+    ){
+}
 
-  ngOnInit() {
+
+/* Using snapshot */
+ngOnInit() {
+this.data=this._Activatedroute.snapshot.params['id'];
+ console.log(this.data);
+}
   }
 
-}
+
