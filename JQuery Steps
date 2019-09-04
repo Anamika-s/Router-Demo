@@ -1,0 +1,25 @@
+
+Install JQuery Package
+
+npm install jquery --save
+
+Set its path in Angular.json file
+ "scripts": ["../node_modules/jquery/dist/jquery.min.js",
+              "../node_modules/bootstrap/dist/js/bootstrap.js"]
+
+
+In comp.ts , import 
+import * as $ from 'jquery';
+In COmp.html
+ ngOnInit() {
+    $(document).ready(function(){
+      alert("HHH");
+      $("button").click(function(){
+          var div = $("div");  
+          div.animate({left: '100px'}, "slow");
+          div.animate({fontSize: '5em'}, "slow");
+      });
+  });
+    this.get_students();
+  }
+ 
